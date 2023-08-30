@@ -36,7 +36,7 @@ use function substr;
  */
 class RedisCache implements CacheInterface
 {
-    public const CACHE_NAMESPACE = 'sw_news:';
+    public const CACHE_NAMESPACE = '';
 
     public const CACHE_PREFIX = '';
 
