@@ -9,7 +9,7 @@ use Throwable;
 
 interface NoticeInterface
 {
-    const PROJECT = 'sw_news';
+    const PROJECT = '';
 
     const CARD_MSG_DEBUG = 'debug';
     const CARD_MSG_INFO = 'info';
