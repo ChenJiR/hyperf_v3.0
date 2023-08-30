@@ -9,18 +9,19 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+
 namespace App\Controller;
+
+use App\Service\AiChatSwooleService;
+use Hyperf\Di\Annotation\Inject;
 
 class IndexController extends AbstractController
 {
+    #[Inject]
+    protected AiChatSwooleService $aiChatSwooleService;
+
     public function index()
     {
-        $user = $this->request->input('user', 'Hyperf');
-        $method = $this->request->getMethod();
-
-        return [
-            'method' => $method,
-            'message' => "Hello {$user}.",
-        ];
+        return $this->aiChatSwooleService->completions('你好');
     }
 }
